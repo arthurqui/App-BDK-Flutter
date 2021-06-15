@@ -53,3 +53,57 @@ recuperarlink() async {
     throw 'Could not launch $url';
   }
 }
+
+idledaddylink() async {
+  const url = 'https://www.youtube.com/watch?v=I3WpjqWbHTU';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
+samlink() async {
+  const url = 'https://www.youtube.com/watch?v=_xLTCVHSnA0&t=741s';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
+sihlink() async {
+  const url = 'https://www.youtube.com/watch?v=pFxDkD-ywc4';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
+skinslink() async {
+  const url = 'http://bdkskins.eu5.org';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
+retroarchlink() async {
+  const url = 'https://www.youtube.com/watch?v=pcX-hifHdJM';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
+reembolsolink() async {
+  const url = 'https://www.youtube.com/watch?v=RYAsSCRwtPk';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}

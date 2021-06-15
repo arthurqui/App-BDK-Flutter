@@ -11,6 +11,8 @@ class HomePage extends StatefulWidget {
 
 class HomePageState extends State<HomePage> {
   double alt = 20.0;
+  String imgfundo = "images/fundo.png";
+  bool state = true;
 
   @override
   Widget build(BuildContext context) {
@@ -22,16 +24,33 @@ class HomePageState extends State<HomePage> {
           centerTitle: true,
           actions: <Widget>[
             Padding(
-                padding: EdgeInsets.only(right: 20.0),
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).pushReplacementNamed('/');
-                  },
-                  child: Icon(
-                    Icons.logout,
-                    size: 26.0,
+              padding: EdgeInsets.only(right: 20.0),
+              child: Row(
+                children: [
+                  Switch(
+                    value: state,
+                    onChanged: (bool s) {
+                      setState(() {
+                        state = s;
+                        print(state);
+                        state
+                            ? imgfundo = "images/fundo.png"
+                            : imgfundo = "images/fundo2.png";
+                      });
+                    },
                   ),
-                )),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pushReplacementNamed('/');
+                    },
+                    child: Icon(
+                      Icons.logout,
+                      size: 26.0,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ]),
 
       //
@@ -41,7 +60,7 @@ class HomePageState extends State<HomePage> {
         height: double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("images/fundo.png"),
+            image: AssetImage(imgfundo),
             fit: BoxFit.cover,
           ),
         ),
@@ -60,12 +79,21 @@ class HomePageState extends State<HomePage> {
                 child: Center(
                   child: Column(
                     children: [
-                      Container(height: 60.0),
+                      Container(height: 55.0),
                       Text(
-                        'Banner 1',
+                        'Agora o BDK também é APP!',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 40,
+                          fontSize: 22,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Container(height: 15.0),
+                      Text(
+                        'Vendo que muitos dos viewers do canal\nacompanham pelo celular e o site do BDK é\n100% otimizado para navegadores de\ncomputador, é apresentado para vocês o\naplciativo do Brasil Drop Keys!\n\nAqui você pode encontrar ferramentas e tutoriais relacionados a Steam e até mesmo ferramentas\npara usar no dia a dia',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 14,
                           color: Colors.white,
                         ),
                       ),
@@ -75,22 +103,55 @@ class HomePageState extends State<HomePage> {
                             .center, //Center Row contents horizontally,
                         crossAxisAlignment: CrossAxisAlignment
                             .center, //Center Row contents vertically,
-                        children: [
-                          RaisedButton(
-                            textColor: Colors.white,
-                            color: Colors.grey[900],
-                            child: Text("ir"),
-                            onPressed: () {
-                              setState(() {});
-                              debugPrint('apertei');
-                            },
-                          ),
-                        ],
+                        children: [],
                       ),
                     ],
                   ),
                 ),
               ),
+              Row(
+                  mainAxisAlignment: MainAxisAlignment
+                      .center, //Center Row contents horizontally,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Column(
+                      children: [
+                        Text(
+                          'Ferramentas e Tutoriais:',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontSize: 17,
+                              height: 1.2,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              shadows: [
+                                Shadow(
+                                    // bottomLeft
+                                    offset: Offset(-1.5, -1.5),
+                                    color: Colors.black),
+                                Shadow(
+                                    // bottomRight
+                                    offset: Offset(1.5, -1.5),
+                                    color: Colors.black),
+                                Shadow(
+                                    // topRight
+                                    offset: Offset(1.5, 1.5),
+                                    color: Colors.black),
+                                Shadow(
+                                    // topLeft
+                                    offset: Offset(-1.5, 1.5),
+                                    color: Colors.black),
+                              ]),
+                        ),
+                        Container(height: 15.0),
+                      ],
+                    ),
+                  ]),
+              //
+              //
+              //
+              //
+              //
               //inicio da fila de botões
               Row(
                 mainAxisAlignment: MainAxisAlignment
@@ -110,11 +171,11 @@ class HomePageState extends State<HomePage> {
                         child: Image.asset("images/contador.png"),
                       ),
                       Text(
-                        'Contador',
+                        'Contador\n',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontSize: 17,
-                            height: 0.09,
+                            height: 1.2,
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             shadows: [
@@ -137,7 +198,9 @@ class HomePageState extends State<HomePage> {
                             ]),
                       ),
                     ],
-                  ), //fim do botão com nome
+                  ),
+                  Container(width: 10.0), //espaço entre botoes
+                  //fim do botão com nome
                   //
                   Column(
                     children: [
@@ -150,11 +213,11 @@ class HomePageState extends State<HomePage> {
                         child: Image.asset("images/recuperarconta.png"),
                       ),
                       Text(
-                        'Recuperar',
+                        'Recuperar\nConta\n',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontSize: 17,
-                            height: 0.09,
+                            height: 1.2,
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             shadows: [
@@ -178,6 +241,7 @@ class HomePageState extends State<HomePage> {
                       ),
                     ],
                   ),
+                  Container(width: 10.0), //espaço entre botoes
                   Column(
                     children: [
                       GestureDetector(
@@ -189,11 +253,11 @@ class HomePageState extends State<HomePage> {
                         child: Image.asset("images/botaoinventario.png"),
                       ),
                       Text(
-                        'Inventário',
+                        'Valor do\n Inventário\n',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontSize: 17,
-                            height: 0.09,
+                            height: 1.2,
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             shadows: [
@@ -230,54 +294,17 @@ class HomePageState extends State<HomePage> {
                     children: [
                       GestureDetector(
                         onTap: () {
+                          idledaddylink();
                           debugPrint('apertei');
                         },
-                        child: Image.asset("images/placeholder.png"),
+                        child: Image.asset("images/botaoID.png"),
                       ),
                       Text(
-                        '??????',
+                        'Idle\nDaddy\n',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontSize: 17,
-                            height: 0.09,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            shadows: [
-                              Shadow(
-                                  // bottomLeft
-                                  offset: Offset(-1.5, -1.5),
-                                  color: Colors.black),
-                              Shadow(
-                                  // bottomRight
-                                  offset: Offset(1.5, -1.5),
-                                  color: Colors.black),
-                              Shadow(
-                                  // topRight
-                                  offset: Offset(1.5, 1.5),
-                                  color: Colors.black),
-                              Shadow(
-                                  // topLeft
-                                  offset: Offset(-1.5, 1.5),
-                                  color: Colors.black),
-                            ]),
-                      ),
-                    ],
-                  ), //fim do botão com nome
-                  //
-                  Column(
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          debugPrint('apertei');
-                        },
-                        child: Image.asset("images/placeholder.png"),
-                      ),
-                      Text(
-                        '??????',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontSize: 17,
-                            height: 0.09,
+                            height: 1.2,
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             shadows: [
@@ -301,20 +328,63 @@ class HomePageState extends State<HomePage> {
                       ),
                     ],
                   ),
+                  Container(width: 10.0), //espaço entre botoes
+                  Container(width: 10.0), //fim do botão com nome
+                  //
                   Column(
                     children: [
                       GestureDetector(
                         onTap: () {
+                          samlink();
                           debugPrint('apertei');
                         },
-                        child: Image.asset("images/placeholder.png"),
+                        child: Image.asset("images/botaoSAM.png"),
                       ),
                       Text(
-                        '??????',
+                        'Desbloquear\nConquistas\n',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontSize: 17,
-                            height: 0.20,
+                            height: 1.2,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            shadows: [
+                              Shadow(
+                                  // bottomLeft
+                                  offset: Offset(-1.5, -1.5),
+                                  color: Colors.black),
+                              Shadow(
+                                  // bottomRight
+                                  offset: Offset(1.5, -1.5),
+                                  color: Colors.black),
+                              Shadow(
+                                  // topRight
+                                  offset: Offset(1.5, 1.5),
+                                  color: Colors.black),
+                              Shadow(
+                                  // topLeft
+                                  offset: Offset(-1.5, 1.5),
+                                  color: Colors.black),
+                            ]),
+                      ),
+                    ],
+                  ),
+                  Container(width: 10.0), //espaço entre botoes
+                  Column(
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          sihlink();
+                          debugPrint('apertei');
+                        },
+                        child: Image.asset("images/botaoSIH.png"),
+                      ),
+                      Text(
+                        'Melhorar\nInventário\n',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 17,
+                            height: 1.2,
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             shadows: [
@@ -351,54 +421,17 @@ class HomePageState extends State<HomePage> {
                     children: [
                       GestureDetector(
                         onTap: () {
+                          skinslink();
                           debugPrint('apertei');
                         },
-                        child: Image.asset("images/placeholder.png"),
+                        child: Image.asset("images/botaoskins.png"),
                       ),
                       Text(
-                        '??????',
+                        'Skins\nGrátis\n',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontSize: 17,
-                            height: 0.09,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            shadows: [
-                              Shadow(
-                                  // bottomLeft
-                                  offset: Offset(-1.5, -1.5),
-                                  color: Colors.black),
-                              Shadow(
-                                  // bottomRight
-                                  offset: Offset(1.5, -1.5),
-                                  color: Colors.black),
-                              Shadow(
-                                  // topRight
-                                  offset: Offset(1.5, 1.5),
-                                  color: Colors.black),
-                              Shadow(
-                                  // topLeft
-                                  offset: Offset(-1.5, 1.5),
-                                  color: Colors.black),
-                            ]),
-                      ),
-                    ],
-                  ), //fim do botão com nome
-                  //
-                  Column(
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          debugPrint('apertei');
-                        },
-                        child: Image.asset("images/placeholder.png"),
-                      ),
-                      Text(
-                        '??????',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontSize: 17,
-                            height: 0.09,
+                            height: 1.2,
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             shadows: [
@@ -422,20 +455,63 @@ class HomePageState extends State<HomePage> {
                       ),
                     ],
                   ),
+                  Container(width: 10.0), //espaço entre botoes
+                  //fim do botão com nome
+                  //
                   Column(
                     children: [
                       GestureDetector(
                         onTap: () {
+                          retroarchlink();
                           debugPrint('apertei');
                         },
-                        child: Image.asset("images/placeholder.png"),
+                        child: Image.asset("images/botaoretro.png"),
                       ),
                       Text(
-                        '??????',
+                        'Explicando\nRetroarch\n',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontSize: 17,
-                            height: 0.20,
+                            height: 1.2,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            shadows: [
+                              Shadow(
+                                  // bottomLeft
+                                  offset: Offset(-1.5, -1.5),
+                                  color: Colors.black),
+                              Shadow(
+                                  // bottomRight
+                                  offset: Offset(1.5, -1.5),
+                                  color: Colors.black),
+                              Shadow(
+                                  // topRight
+                                  offset: Offset(1.5, 1.5),
+                                  color: Colors.black),
+                              Shadow(
+                                  // topLeft
+                                  offset: Offset(-1.5, 1.5),
+                                  color: Colors.black),
+                            ]),
+                      ),
+                    ],
+                  ),
+                  Container(width: 10.0), //espaço entre botoes
+                  Column(
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          reembolsolink();
+                          debugPrint('apertei');
+                        },
+                        child: Image.asset("images/botaoreembolso.png"),
+                      ),
+                      Text(
+                        'Reembolsar\nJogos\n',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 17,
+                            height: 1.2,
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             shadows: [
@@ -460,7 +536,12 @@ class HomePageState extends State<HomePage> {
                     ],
                   ),
                 ],
-              ), //fim da linha de botões
+              ),
+              Row(
+                children: [
+                  Container(height: 40.0),
+                ],
+              ) //fim da linha de botões
             ]),
           ],
         ),

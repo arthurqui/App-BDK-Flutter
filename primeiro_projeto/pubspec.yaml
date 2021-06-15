@@ -54,12 +54,19 @@ flutter:
     - images/loogo.png
     - images/loogo2.png
     - images/fundo.png
+    - images/fundo2.png
     - images/games.png
     - images/fundopreto.png
     - images/logonome.png
     - images/contador.png
     - images/botaoinventario.png
     - images/recuperarconta.png
+    - images/botaoID.png
+    - images/botaoreembolso.png
+    - images/botaoretro.png
+    - images/botaoSAM.png
+    - images/botaoSIH.png
+    - images/botaoskins.png
     - images/placeholder.png
     
     
