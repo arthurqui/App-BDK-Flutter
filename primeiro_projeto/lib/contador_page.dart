@@ -7,15 +7,47 @@ class ContadorPage extends StatefulWidget {
 }
 
 class _ContadorPageState extends State<ContadorPage> {
+  String imgfundo = "images/fundo.png";
+  bool state = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Contadores(),
+      body: Container(
+          width: double.infinity,
+          height: double.infinity,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(imgfundo),
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: ListView(children: [Contadores()])),
       drawer: DrawerApp(),
       appBar: AppBar(
-        title: Text("Brasil Drop Keys"),
-        centerTitle: true,
-      ),
+          title: Text("Brasil Drop Keys"),
+          centerTitle: true,
+          actions: <Widget>[
+            Padding(
+              padding: EdgeInsets.only(right: 20.0),
+              child: Row(
+                children: [
+                  Switch(
+                    value: state,
+                    onChanged: (bool s) {
+                      setState(() {
+                        state = s;
+                        print(state);
+                        state
+                            ? imgfundo = "images/fundo.png"
+                            : imgfundo = "images/fundo2.png";
+                      });
+                    },
+                  ),
+                ],
+              ),
+            ),
+          ]),
       floatingActionButton: FloatingActionButton(
         child: Icon(
           Icons.home,

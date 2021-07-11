@@ -107,3 +107,13 @@ reembolsolink() async {
     throw 'Could not launch $url';
   }
 }
+
+calcvid() async {
+  //video explicando level por jogo na steam
+  const url = 'https://www.youtube.com/watch?v=SYqYYlrDk5k';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}

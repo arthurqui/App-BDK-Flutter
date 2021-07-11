@@ -109,6 +109,7 @@ class HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
+
               Row(
                   mainAxisAlignment: MainAxisAlignment
                       .center, //Center Row contents horizontally,
@@ -116,11 +117,143 @@ class HomePageState extends State<HomePage> {
                   children: [
                     Column(
                       children: [
+                        Container(height: 15.0),
                         Text(
-                          'Ferramentas e Tutoriais:',
+                          'Funções nativas do App:',
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              fontSize: 17,
+                              fontSize: 20,
+                              height: 1.2,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              shadows: [
+                                Shadow(
+                                    // bottomLeft
+                                    offset: Offset(-1.5, -1.5),
+                                    color: Colors.black),
+                                Shadow(
+                                    // bottomRight
+                                    offset: Offset(1.5, -1.5),
+                                    color: Colors.black),
+                                Shadow(
+                                    // topRight
+                                    offset: Offset(1.5, 1.5),
+                                    color: Colors.black),
+                                Shadow(
+                                    // topLeft
+                                    offset: Offset(-1.5, 1.5),
+                                    color: Colors.black),
+                              ]),
+                        ),
+                        Container(height: 15.0),
+                      ],
+                    ),
+                  ]),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment
+                    .center, //Center Row contents horizontally,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  //
+                  Column(
+                    //botão com nome
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pushNamed('/contador');
+
+                          debugPrint('apertei');
+                        },
+                        child: Image.asset("images/contador.png"),
+                      ),
+                      Text(
+                        'Contador\n',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 17,
+                            height: 1.2,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            shadows: [
+                              Shadow(
+                                  // bottomLeft
+                                  offset: Offset(-1.5, -1.5),
+                                  color: Colors.black),
+                              Shadow(
+                                  // bottomRight
+                                  offset: Offset(1.5, -1.5),
+                                  color: Colors.black),
+                              Shadow(
+                                  // topRight
+                                  offset: Offset(1.5, 1.5),
+                                  color: Colors.black),
+                              Shadow(
+                                  // topLeft
+                                  offset: Offset(-1.5, 1.5),
+                                  color: Colors.black),
+                            ]),
+                      ),
+                    ],
+                  ),
+                  Container(width: 10.0), //espaço entre botoes
+                  //fim do botão com nome
+                  //
+                  Column(
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pushNamed('/calc');
+
+                          debugPrint('apertei');
+                        },
+                        child: Image.asset("images/botaocalc.png"),
+                      ),
+                      Text(
+                        'Level por\nJogo\n',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 17,
+                            height: 1.2,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            shadows: [
+                              Shadow(
+                                  // bottomLeft
+                                  offset: Offset(-1.5, -1.5),
+                                  color: Colors.black),
+                              Shadow(
+                                  // bottomRight
+                                  offset: Offset(1.5, -1.5),
+                                  color: Colors.black),
+                              Shadow(
+                                  // topRight
+                                  offset: Offset(1.5, 1.5),
+                                  color: Colors.black),
+                              Shadow(
+                                  // topLeft
+                                  offset: Offset(-1.5, 1.5),
+                                  color: Colors.black),
+                            ]),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+
+              Row(
+                  mainAxisAlignment: MainAxisAlignment
+                      .center, //Center Row contents horizontally,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Column(
+                      children: [
+                        Container(height: 20.0),
+                        Text(
+                          'Ferramentas e guias:',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontSize: 20,
                               height: 1.2,
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -164,14 +297,13 @@ class HomePageState extends State<HomePage> {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          Navigator.of(context).pushNamed('/contador');
-
+                          skinslink();
                           debugPrint('apertei');
                         },
-                        child: Image.asset("images/contador.png"),
+                        child: Image.asset("images/botaoskins.png"),
                       ),
                       Text(
-                        'Contador\n',
+                        'Skins\nGrátis\n',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontSize: 17,
@@ -416,45 +548,7 @@ class HomePageState extends State<HomePage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   //
-                  Column(
-                    //botão com nome
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          skinslink();
-                          debugPrint('apertei');
-                        },
-                        child: Image.asset("images/botaoskins.png"),
-                      ),
-                      Text(
-                        'Skins\nGrátis\n',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontSize: 17,
-                            height: 1.2,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            shadows: [
-                              Shadow(
-                                  // bottomLeft
-                                  offset: Offset(-1.5, -1.5),
-                                  color: Colors.black),
-                              Shadow(
-                                  // bottomRight
-                                  offset: Offset(1.5, -1.5),
-                                  color: Colors.black),
-                              Shadow(
-                                  // topRight
-                                  offset: Offset(1.5, 1.5),
-                                  color: Colors.black),
-                              Shadow(
-                                  // topLeft
-                                  offset: Offset(-1.5, 1.5),
-                                  color: Colors.black),
-                            ]),
-                      ),
-                    ],
-                  ),
+
                   Container(width: 10.0), //espaço entre botoes
                   //fim do botão com nome
                   //

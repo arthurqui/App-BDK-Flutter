@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.primeiro_projeto">
    <application
-        android:label="primeiro_projeto"
+        android:label="Brasil Drop Keys"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:primeiro_projeto/app_controler.dart';
+import 'package:primeiro_projeto/app_database.dart';
 import 'package:primeiro_projeto/loginpage.dart';
 
 import 'contador_page.dart';
+import 'calc_lvl.dart';
 import 'home_page.dart';
 
 class Appwidget extends StatelessWidget {
@@ -20,9 +22,10 @@ class Appwidget extends StatelessWidget {
                 : Brightness.dark,
           ),
           routes: {
-            '/': (context) => LoginPage(),
+            '/': (context) => LoginPage(bdk: Database()),
             '/home': (context) => HomePage(),
             '/contador': (context) => ContadorPage(),
+            '/calc': (context) => CalcPage(),
           },
         );
       },
