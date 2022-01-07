@@ -11,6 +11,6 @@ Para rodar o app no seu celular android, baixe o apk que está neste repositóri
 
 Screenshots:
 
-<img src="https://i.imgur.com/MZrMcGQ.png" width="400"><img src="https://i.imgur.com/7QxzgbX.png" width="400"><img src="https://i.imgur.com/DbwZ3KG.png" width="400"><img src="https://i.imgur.com/eDZSoNW.png" width="400"><img src="https://i.imgur.com/CB6dG3y.png" width="400"><img src="https://i.imgur.com/yGFh6tV.png" width="400"><img src="https://i.imgur.com/rLfPtsN.png" width="400">
+<img src="https://i.imgur.com/MZrMcGQ.png" width="400"><img src="https://i.imgur.com/7QxzgbX.png" width="400">   <img src="https://i.imgur.com/DbwZ3KG.png" width="400"><img src="https://i.imgur.com/eDZSoNW.png" width="400"><img src="https://i.imgur.com/CB6dG3y.png" width="400"><img src="https://i.imgur.com/yGFh6tV.png" width="400"><img src="https://i.imgur.com/rLfPtsN.png" width="400">
 
 
