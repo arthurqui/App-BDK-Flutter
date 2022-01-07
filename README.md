@@ -11,4 +11,6 @@ Para rodar o app no seu celular android, baixe o apk que está neste repositóri
 
 Screenshots:
 
+<img src="https://i.imgur.com/MZrMcGQ.png" width="200">
+
 ![Alt](https://i.imgur.com/MZrMcGQ.png) ![Alt](https://i.imgur.com/7QxzgbX.png) ![Alt](https://i.imgur.com/DbwZ3KG.png) ![Alt](https://i.imgur.com/eDZSoNW.png) ![Alt](https://i.imgur.com/CB6dG3y.png) ![Alt](https://i.imgur.com/yGFh6tV.png) ![Alt](https://i.imgur.com/rLfPtsN.png)
